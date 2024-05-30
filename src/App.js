@@ -1,4 +1,4 @@
-import 'devextreme/dist/css/dx.light.css';
+import "devextreme/dist/css/dx.light.css"
 import "./App.css"
 import React, { useState, useCallback, useEffect } from "react"
 import { Gallery } from "devextreme-react/gallery"
@@ -21,6 +21,23 @@ export default function App() {
   const onThumbnailOrientationChange = useCallback((e) => {
     setThumbnailOrientation(e.value)
   }, [])
+
+  const TabsComponent = useCallback(() => {
+    return (
+      <Tabs
+        items={thumbnails}
+        orientation={thumbnailOrientation}
+        showNavButtons={true}
+        itemRender={renderThumbnail}
+        width={thumbnailOrientation === "horizontal" && galleryWidth}
+        height={thumbnailOrientation === "vertical" && galleryHeight}
+        selectedIndex={selectedIndex}
+        onSelectionChanged={onSelectionChanged}
+        loop={true}
+      />
+    )
+    // eslint-disable-next-line
+  }, [thumbnailOrientation])
 
   const onContentReady = useCallback(() => {
     const imagesWrapper = document.querySelector(
@@ -128,16 +145,7 @@ export default function App() {
       >
         {thumbnailOrientation === "vertical" && (
           <div className={"flex mr-16"}>
-            <Tabs
-              items={thumbnails}
-              orientation='vertical'
-              showNavButtons={true}
-              itemRender={renderThumbnail}
-              height={galleryHeight}
-              selectedIndex={selectedIndex}
-              onSelectionChanged={onSelectionChanged}
-              loop={true}
-            />
+            <TabsComponent />
           </div>
         )}
         <Gallery
@@ -157,16 +165,7 @@ export default function App() {
         />
         {thumbnailOrientation === "horizontal" && (
           <div className={"flex mt-8 mb-8"}>
-            <Tabs
-              items={thumbnails}
-              orientation='horizontal'
-              showNavButtons={true}
-              itemRender={renderThumbnail}
-              width={galleryWidth}
-              selectedIndex={selectedIndex}
-              onSelectionChanged={onSelectionChanged}
-              loop={true}
-            />
+            <TabsComponent />
           </div>
         )}
       </div>
