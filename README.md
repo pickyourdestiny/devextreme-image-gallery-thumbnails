@@ -1,11 +1,10 @@
-# Purpose
+# Devextreme Image Gallery Plus Thumbnail Viewer
 
 I bumped into this solution because I was trying to reduce the number of external libraries in another project and only use Devextreme.
 
-Originally I used another external library that combined an image gallery with a thumbnail viewer, but I wasn't happy with the results because it didn't have the professional look and feel Devextreme consistently delivers.
+You are probably already aware of the Devextreme Gallery Widget.  This solution combines the Gallery widget and the Tab Widget, however the Tab widget is repurposed as a thumbnail slider.
 
-So I combined the Devextreme Gallery Widget with the Tab Widget, which now has the option of having a vertical orientation. I repurposed the tab widget as a thumbnail viewer using the built-in item render capability.
-
+The Tab Widget now has the feature of having both a horizontal and vertical orientations, which provides a more flexible thumbnail viewer depending on your use case (or allow the user to switch modes as shown in this demo)
 
 
 https://github.com/pickyourdestiny/devextreme-image-gallery-thumbnails/assets/125666742/a3c3c524-611a-446e-bc5a-a992e41faa68
