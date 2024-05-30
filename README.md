@@ -8,4 +8,6 @@ The Tabs widget was recently improved (https://js.devexpress.com/React/New/23_2/
 
 Alternatively, you can allow the user to switch between the two thumbnail orientations as shown in this demo and the code provided.
 
+Note: The vertical thumbnail orientation has the added bonus of allowing users to scroll up and down through the thumbnail list instead of having to rely on the tab navigation buttons alone
+
 https://github.com/pickyourdestiny/devextreme-image-gallery-thumbnails/assets/125666742/a3c3c524-611a-446e-bc5a-a992e41faa68
