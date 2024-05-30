@@ -9,7 +9,7 @@ So I combined the Devextreme Gallery Widget with the Tab Widget, which now has t
 
 
 
-    [![Watch the video](https://raw.githubusercontent.com/pickyourdestiny/devextreme-image-gallery-thumbnails/main/ImageandVideo/screenshot.jpg)](https://raw.githubusercontent.com/pickyourdestiny/devextreme-image-gallery-thumbnails/main/ImageandVideo/imageGalleryThumbnailSlider.mp4)
+    [![Watch the video](https://raw.githubusercontent.com/pickyourdestiny/devextreme-image-gallery-thumbnails/ImageandVideo/screenshot.jpg)](https://raw.githubusercontent.com/pickyourdestiny/devextreme-image-gallery-thumbnails/ImageandVideo/imageGalleryThumbnailSlider.mp4)
 
 
 
