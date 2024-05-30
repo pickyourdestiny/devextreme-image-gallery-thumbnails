@@ -94,11 +94,10 @@ export default function App() {
       playButtonElement.style.backgroundColor = ""
 
       if (pausePlay === "play") {
+        pauseButtonInstance.option("icon", pauseSVG)
         playButtonInstance.option("icon", playAccentSVG)
         playButtonElement.style.border = "1px dotted darkgrey"
         playButtonElement.style.backgroundColor = "#ededed"
-
-        pauseButtonInstance.option("icon", pauseSVG)
       } else {
         playButtonInstance.option("icon", playSVG)
         pauseButtonInstance.option("icon", pauseAccentSVG)
