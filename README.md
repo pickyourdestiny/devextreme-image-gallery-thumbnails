@@ -11,3 +11,7 @@ So I combined the Devextreme Gallery Widget with the Tab Widget, which now has t
 
 
 
+
+
+https://github.com/pickyourdestiny/devextreme-image-gallery-thumbnails/assets/125666742/a3c3c524-611a-446e-bc5a-a992e41faa68
+
