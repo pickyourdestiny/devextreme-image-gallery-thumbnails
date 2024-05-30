@@ -1,3 +1,4 @@
+import 'devextreme/dist/css/dx.light.css';
 import "./App.css"
 import React, { useState, useCallback, useEffect } from "react"
 import { Gallery } from "devextreme-react/gallery"
