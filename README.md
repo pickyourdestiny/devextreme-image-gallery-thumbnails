@@ -9,5 +9,9 @@ So I combined the Devextreme Gallery Widget with the Tab Widget, which now has t
 
 
 
+    [![Watch the video](https://raw.githubusercontent.com/pickyourdestiny/devextreme-image-gallery-thumbnails/master/ImageandVideo/screenshot.jpg)](https://raw.githubusercontent.com/pickyourdestiny/devextreme-image-gallery-thumbnails/master/ImageandVideo/imageGalleryThumbnailSlider.mp4)
+
+
+
 
 
