@@ -1,6 +1,6 @@
 import "devextreme/dist/css/dx.light.css"
 import "./App.css"
-import React, { useState, useCallback, useEffect } from "react"
+import React, { useState, useCallback, useEffect, useMemo } from "react"
 import { Gallery } from "devextreme-react/gallery"
 import Tabs from "devextreme-react/tabs"
 import Button from "devextreme/ui/button"
@@ -81,6 +81,23 @@ export default function App() {
     [thumbnails]
   )
 
+  const MemoizedTabs = useMemo(() => {
+    return (
+      <Tabs
+        items={thumbnails}
+        orientation={thumbnailOrientation}
+        showNavButtons={true}
+        itemRender={renderThumbnail}
+        height={thumbnailOrientation === "vertical" && galleryHeight}
+        width={thumbnailOrientation === "horizontal" && galleryWidth}
+        selectedIndex={selectedIndex}
+        onSelectionChanged={onSelectionChanged}
+        loop={true}
+      />
+    )
+    // eslint-disable-next-line
+  }, [selectedIndex, thumbnailOrientation])
+
   useEffect(() => {
     const playButtonElement = document.getElementById("play-button")
     const playButtonInstance = Button.getInstance(playButtonElement)
@@ -127,18 +144,7 @@ export default function App() {
         }
       >
         {thumbnailOrientation === "vertical" && (
-          <div className={"flex mr-16"}>
-            <Tabs
-              items={thumbnails}
-              orientation='vertical'
-              showNavButtons={true}
-              itemRender={renderThumbnail}
-              height={galleryHeight}
-              selectedIndex={selectedIndex}
-              onSelectionChanged={onSelectionChanged}
-              loop={true}
-            />
-          </div>
+          <div className={"flex mr-16"}>{MemoizedTabs}</div>
         )}
         <Gallery
           elementAttr={elementAttr}
@@ -156,18 +162,7 @@ export default function App() {
           loop={true}
         />
         {thumbnailOrientation === "horizontal" && (
-          <div className={"flex mt-8 mb-8"}>
-            <Tabs
-              items={thumbnails}
-              orientation='horizontal'
-              showNavButtons={true}
-              itemRender={renderThumbnail}
-              width={galleryWidth}
-              selectedIndex={selectedIndex}
-              onSelectionChanged={onSelectionChanged}
-              loop={true}
-            />
-          </div>
+          <div className={"flex mt-8 mb-8"}>{MemoizedTabs}</div>
         )}
       </div>
     </div>
