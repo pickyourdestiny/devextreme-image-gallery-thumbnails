@@ -22,23 +22,6 @@ export default function App() {
     setThumbnailOrientation(e.value)
   }, [])
 
-  const TabsComponent = useCallback(() => {
-    return (
-      <Tabs
-        items={thumbnails}
-        orientation={thumbnailOrientation}
-        showNavButtons={true}
-        itemRender={renderThumbnail}
-        width={thumbnailOrientation === "horizontal" && galleryWidth}
-        height={thumbnailOrientation === "vertical" && galleryHeight}
-        selectedIndex={selectedIndex}
-        onSelectionChanged={onSelectionChanged}
-        loop={true}
-      />
-    )
-    // eslint-disable-next-line
-  }, [thumbnailOrientation])
-
   const onContentReady = useCallback(() => {
     const imagesWrapper = document.querySelector(
       "#images-gallery .dx-gallery-wrapper"
@@ -145,7 +128,16 @@ export default function App() {
       >
         {thumbnailOrientation === "vertical" && (
           <div className={"flex mr-16"}>
-            <TabsComponent />
+            <Tabs
+              items={thumbnails}
+              orientation='vertical'
+              showNavButtons={true}
+              itemRender={renderThumbnail}
+              height={galleryHeight}
+              selectedIndex={selectedIndex}
+              onSelectionChanged={onSelectionChanged}
+              loop={true}
+            />
           </div>
         )}
         <Gallery
@@ -165,7 +157,16 @@ export default function App() {
         />
         {thumbnailOrientation === "horizontal" && (
           <div className={"flex mt-8 mb-8"}>
-            <TabsComponent />
+            <Tabs
+              items={thumbnails}
+              orientation='horizontal'
+              showNavButtons={true}
+              itemRender={renderThumbnail}
+              width={galleryWidth}
+              selectedIndex={selectedIndex}
+              onSelectionChanged={onSelectionChanged}
+              loop={true}
+            />
           </div>
         )}
       </div>
