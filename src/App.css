@@ -1,8 +1,7 @@
 #pause-play-buttons {
   position: absolute;
   top: 0px;
-  right: 70px;
-  transform: translateX(50%);
+  right: 35px;
   border: 2px solid rgba(0, 0, 0, 0.3);
   background-color: white;
   padding: 2px;
