@@ -29,9 +29,9 @@ export default function App() {
     const pausePlayButtons = document.getElementById("pause-play-buttons")
 
     if (!pausePlayButtons && imagesWrapper) {
+      //create Pause and Play buttons
       const pausePlayElement = document.createElement("div")
       const pauseElement = document.createElement("div")
-
       const playElement = document.createElement("div")
       pausePlayElement.setAttribute("id", "pause-play-buttons")
       pausePlayElement.setAttribute("class", "dx-widget")
@@ -50,6 +50,7 @@ export default function App() {
         onClick: () => setPausePlay("pause"),
       })
 
+      //add buttons to the Gallery images wrapper
       pausePlayElement.append(playElement)
       pausePlayElement.append(pauseElement)
       imagesWrapper.append(pausePlayElement)
