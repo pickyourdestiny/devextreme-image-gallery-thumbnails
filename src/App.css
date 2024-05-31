@@ -16,12 +16,10 @@
   min-height: 800px;
 }
 
-#images-gallery {
-  .dx-gallery-item-image {
-    /*matching Gallery component height and width*/
-    height: 450px !important;
-    width: 600px !important;
-  }
+#images-gallery .dx-gallery-item-image {
+  /*matching Gallery component height and width*/
+  height: 450px !important;
+  width: 600px !important;
 }
 
 #pause-play-buttons:hover {
