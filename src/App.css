@@ -5,6 +5,7 @@
   border: 2px solid rgba(0, 0, 0, 0.3);
   background-color: white;
   padding: 2px;
+  z-index: 1501;
 }
 
 #play-button {
@@ -27,9 +28,16 @@
   border: 2px solid rgba(51, 122, 183, 1);
 }
 
+.dx-item.dx-tab {
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+  padding-top: 6px !important;
+  padding-bottom: 0px !important;
+}
+
 .thumbnail-image {
-  height: 50px;
-  width: 60px;
+  height: 55px;
+  width: 65px;
 }
 
 .dx-state-focused.dx-gallery {
@@ -39,12 +47,8 @@
 
 .dx-tab-selected:after {
   /*matches the generic theme color border when focused, so focused and selected tab have the same effect*/
-  border-left: 1px solid rgba(51, 122, 183, 1) !important;
-  border-right: 1px solid rgba(51, 122, 183, 1) !important;
-  border-top: 1px solid rgba(51, 122, 183, 1) !important;
-  border-bottom: 1px solid rgba(51, 122, 183, 1) !important;
-}
-
-.options {
-  background-color: rgba(191, 191, 191, 0.4);
+  border-left: 2px solid rgba(51, 122, 183, 1) !important;
+  border-right: 2px solid rgba(51, 122, 183, 1) !important;
+  border-top: 2px solid rgba(51, 122, 183, 1) !important;
+  border-bottom: 2px solid rgba(51, 122, 183, 1) !important;
 }

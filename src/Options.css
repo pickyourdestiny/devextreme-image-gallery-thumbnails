@@ -1,0 +1,18 @@
+.options {
+  background-color: rgba(191, 191, 191, 0.4);
+}
+
+.option-name {
+  width: 160px;
+  margin-right: 8px;
+}
+
+.caption {
+  font-size: 24px;
+  font-weight: 800;
+  color: grey;
+  text-decoration: underline;
+  text-transform: uppercase;
+  margin-right: auto;
+  margin-left: auto;
+}

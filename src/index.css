@@ -19,9 +19,27 @@ code {
   flex-direction: row;
 }
 
+.flex-row-left {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+.flex-horizontal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .flex {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
   justify-content: center;
   flex-direction: column;
 }
@@ -36,6 +54,14 @@ code {
 
 .width-100 {
   width: 100%;
+}
+
+.width-150 {
+  width: 150px;
+}
+
+.width-500 {
+  width: 500px;
 }
 
 .ml-16 {
@@ -54,6 +80,22 @@ code {
   margin-bottom: 16px;
 }
 
+.mt-32 {
+  margin-top: 32px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.ml-32 {
+  margin-left: 32px;
+}
+
+.mr-32 {
+  margin-right: 32px;
+}
+
 .ml-8 {
   margin-left: 8px;
 }
@@ -68,4 +110,12 @@ code {
 
 .mt-8 {
   margin-top: 8px;
+}
+
+.padding-16 {
+  padding: 16px;
+}
+
+.slightly-rounded-borders {
+  border-radius: 7px;
 }

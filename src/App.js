@@ -1,6 +1,6 @@
 import "devextreme/dist/css/dx.light.css"
 import "./App.css"
-import React, { useState, useCallback, useEffect, useMemo } from "react"
+import React, { useState, useCallback, useEffect, useMemo, useRef } from "react"
 import { Gallery } from "devextreme-react/gallery"
 import Tabs from "devextreme-react/tabs"
 import Button from "devextreme/ui/button"
@@ -9,18 +9,42 @@ import pauseAccentSVG from "./assets/icons/pause-accent.svg"
 import playSVG from "./assets/icons/play.svg"
 import playAccentSVG from "./assets/icons/play-accent.svg"
 import { images } from "./assets/images"
-import { RadioGroup } from "devextreme-react/radio-group"
+import Options from "./Options"
 
 export default function App() {
+  const [showNavButtons, setShowNavButtons] = useState(true)
+  const [showPausePlayButtons, setShowPausePlayButtons] = useState(true)
+  const [showIndicator, setShowIndicator] = useState(true)
+  const [slideShowDelay, setSlideShowDelay] = useState(2000)
+  const [animationDuration, setAnimationDuration] = useState(1000)
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [pausePlay, setPausePlay] = useState("play")
   const [thumbnails, setThumbnails] = useState(images)
   const [galleryImages, setGalleryImages] = useState(images)
-  const [thumbnailOrientation, setThumbnailOrientation] = useState("vertical")
+  const [thumbnailOrientation, setThumbnailOrientation] = useState(
+    radioGroupItems[0].value
+  )
 
-  const onThumbnailOrientationChange = useCallback((e) => {
-    setThumbnailOrientation(e.value)
-  }, [])
+  const galleryRef = useRef(null)
+
+  const optionsProps = {
+    animationDuration,
+    setAnimationDuration,
+    showPausePlayButtons,
+    setShowPausePlayButtons,
+    thumbnails,
+    setThumbnails,
+    thumbnailOrientation,
+    setThumbnailOrientation,
+    showNavButtons,
+    setShowNavButtons,
+    showIndicator,
+    setShowIndicator,
+    slideShowDelay,
+    setSlideShowDelay,
+    radioGroupItems,
+    galleryRef,
+  }
 
   const onContentReady = useCallback(() => {
     const imagesWrapper = document.querySelector(
@@ -59,6 +83,7 @@ export default function App() {
 
   const onSelectionChanged = useCallback(
     (e) => {
+      console.log("selectionChanged", e.addedItems[0])
       const newItem = e.addedItems[0]
       galleryImages.forEach((item, index) => {
         if (item === newItem) {
@@ -69,28 +94,31 @@ export default function App() {
     [galleryImages]
   )
 
-  const renderThumbnail = useCallback(
-    (e) => {
-      if (thumbnails) {
-        return (
-          <div>
-            <img className={"thumbnail-image"} src={e} alt={""} />
-          </div>
-        )
-      }
-    },
-    [thumbnails]
-  )
+  const renderThumbnail = useCallback((e) => {
+    return (
+      <div>
+        <img className={"thumbnail-image"} src={e} alt={""} />
+      </div>
+    )
+  }, [])
 
   const MemoizedTabs = useMemo(() => {
     return (
       <Tabs
         items={thumbnails}
-        orientation={thumbnailOrientation}
+        orientation={
+          thumbnailOrientation.startsWith("horizontal")
+            ? "horizontal"
+            : "vertical"
+        }
         showNavButtons={true}
         itemRender={renderThumbnail}
-        height={thumbnailOrientation === "vertical" && galleryHeight}
-        width={thumbnailOrientation === "horizontal" && galleryWidth}
+        height={
+          thumbnailOrientation.startsWith("vertical") ? galleryHeight : null
+        }
+        width={
+          thumbnailOrientation.startsWith("horizontal") ? galleryWidth : null
+        }
         selectedIndex={selectedIndex}
         onSelectionChanged={onSelectionChanged}
         loop={true}
@@ -127,32 +155,35 @@ export default function App() {
   }, [pausePlay])
 
   return (
-    <div id='demo'>
-      <div className='flex mt-16'>
-        <div className='caption mb-8'>Select Thumbnail Orientation:</div>
-        <div className='mb-16 options'>
-          <RadioGroup
-            items={radioGroupItems}
-            layout={"horizontal"}
-            value={thumbnailOrientation}
-            onValueChanged={onThumbnailOrientationChange}
-          />
-        </div>
+    <div id='demo' style={mainGridStyle}>
+      <div className='flex-center' style={column1Style}>
+        <Options {...optionsProps} />
       </div>
       <div
         className={
-          thumbnailOrientation === "vertical" ? "flex-row mt-16" : "flex mt-16"
+          thumbnailOrientation.startsWith("vertical")
+            ? "flex-row mt-16"
+            : "flex mt-16"
         }
+        style={column2Style}
       >
-        {thumbnailOrientation === "vertical" && (
-          <div className={"flex mr-16"}>{MemoizedTabs}</div>
-        )}
+        {thumbnails.length &&
+        ["vertical-left", "horizontal-top"].includes(thumbnailOrientation) ? (
+          <div
+            className={
+              thumbnailOrientation === "vertical-left" ? "mr-16" : "mb-16"
+            }
+          >
+            {MemoizedTabs}
+          </div>
+        ) : null}
         <Gallery
+          ref={galleryRef}
           elementAttr={elementAttr}
-          showIndicator={false}
+          showIndicator={showIndicator}
           selectedIndex={selectedIndex}
           dataSource={galleryImages}
-          showNavButtons={true}
+          showNavButtons={showNavButtons}
           animationEnabled={true}
           width={galleryWidth}
           height={galleryHeight}
@@ -162,17 +193,42 @@ export default function App() {
           slideshowDelay={pausePlay === "pause" ? 0 : slideShowDelay}
           loop={true}
         />
-        {thumbnailOrientation === "horizontal" && (
-          <div className={"flex mt-8 mb-8"}>{MemoizedTabs}</div>
-        )}
+        {thumbnails.length &&
+        ["vertical-right", "horizontal-bottom"].includes(
+          thumbnailOrientation
+        ) ? (
+          <div
+            className={
+              thumbnailOrientation === "vertical-right" ? "ml-16" : "mt-16"
+            }
+          >
+            {MemoizedTabs}
+          </div>
+        ) : null}
       </div>
     </div>
   )
 }
 
-const animationDuration = 1000 //ms
-const slideShowDelay = 3000 //ms
 const elementAttr = { id: "images-gallery" }
-const galleryHeight = "450px"
-const galleryWidth = "600px"
-const radioGroupItems = ["vertical", "horizontal"]
+const galleryHeight = 450
+const galleryWidth = 600
+const radioGroupItems = [
+  { text: "left", value: "vertical-left" },
+  { text: "right", value: "vertical-right" },
+  { text: "top", value: "horizontal-top" },
+  { text: "bottom", value: "horizontal-bottom" },
+]
+
+//grid style for entire demo
+const mainGridStyle = {
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr 1fr",
+}
+const column1Style = {
+  gridColumn: 1,
+  width: "400px",
+  marginLeft: "auto",
+  marginRight: "auto",
+}
+const column2Style = { gridColumn: 2, width: "700px" }
