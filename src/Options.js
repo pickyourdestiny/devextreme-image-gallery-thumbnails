@@ -146,7 +146,6 @@ export default function Options({
             showSpinButtons={true}
             step={step}
             onValueChanged={onSlideShowDelayChange}
-            validationMessagePosition='right'
           />
         </div>
         <div className='flex-row-left mb-8'>
@@ -161,7 +160,6 @@ export default function Options({
             showSpinButtons={true}
             step={step}
             onValueChanged={onAnimationDurationChange}
-            validationMessagePosition='right'
           />
         </div>
       </div>
