@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2477497f.css",
+    "main.js": "/static/js/main.7d2322ec.js",
+    "static/media/2.jpg": "/static/media/2.4695ca0a554b9c4cb732.jpg",
+    "static/media/5.jpg": "/static/media/5.a5fcf5a7cda45c0fe29a.jpg",
+    "static/media/9.jpg": "/static/media/9.6a36f7777fac3a048222.jpg",
+    "static/media/6.jpg": "/static/media/6.151a29b78a7c3024b9c2.jpg",
+    "static/media/7.jpg": "/static/media/7.ec6944ce4e00b69bb26e.jpg",
+    "static/media/4.jpg": "/static/media/4.0baf7245d8ef6451fe9f.jpg",
+    "static/media/8.jpg": "/static/media/8.a1f2f9c3816f85adf78d.jpg",
+    "static/media/3.jpg": "/static/media/3.c37590faee4966a61235.jpg",
+    "static/media/1.jpg": "/static/media/1.4d84dc31bfba07658a52.jpg",
+    "static/media/dxicons.woff": "/static/media/dxicons.75814ab97cfa8ce4187e.woff",
+    "static/media/dxicons.ttf": "/static/media/dxicons.ee334f84f886430c1e52.ttf",
+    "static/media/dxicons.woff2": "/static/media/dxicons.8df107edb92a1e8a02f5.woff2",
+    "index.html": "/index.html",
+    "static/media/pause-accent.svg": "/static/media/pause-accent.0e520b613d7816893816209a2c551f3d.svg",
+    "static/media/pause.svg": "/static/media/pause.2fa6b9d140bf9ff73be51d8481d550b9.svg",
+    "static/media/play-accent.svg": "/static/media/play-accent.69e38368b922a4ecd5ac2b5421cb2490.svg",
+    "static/media/play.svg": "/static/media/play.6dec6425481dc7f076e0a39dd5aa2f45.svg",
+    "main.2477497f.css.map": "/static/css/main.2477497f.css.map",
+    "main.7d2322ec.js.map": "/static/js/main.7d2322ec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2477497f.css",
+    "static/js/main.7d2322ec.js"
+  ]
+}
