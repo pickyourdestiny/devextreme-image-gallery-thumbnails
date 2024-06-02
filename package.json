@@ -1,11 +1,11 @@
 {
+  "home": "https://github.com/pickyourdestiny/devextreme-image-gallery-thumbnails",
   "name": "devextreme-image-gallery-thumbnails",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "devextreme": "23.2.6",
     "devextreme-react": "23.2.6",
-    "gh-pages": "^6.1.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
@@ -13,6 +13,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -36,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "devextreme-themebuilder": "23.2.6"
+    "devextreme-themebuilder": "23.2.6",
+    "gh-pages": "^6.1.1"
   }
 }
