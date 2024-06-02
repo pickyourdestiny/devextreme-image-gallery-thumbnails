@@ -17,4 +17,6 @@ To try the online demo click on the following link: https://keen-marzipan-f46ad5
 Note: you can use this code freely (as is) however the devextreme components do require a developer license if you plan on modifying the code:
 https://js.devexpress.com/Buy/ . I am an independent contractor and this is my 'go to' library for all client engagements.
 
-https://github.com/pickyourdestiny/devextreme-image-gallery-thumbnails/assets/125666742/a3c3c524-611a-446e-bc5a-a992e41faa68
+
+https://github.com/pickyourdestiny/devextreme-image-gallery-thumbnails/assets/125666742/6e291ffd-30ae-4fbb-9961-5c3a036d3c7d
+
