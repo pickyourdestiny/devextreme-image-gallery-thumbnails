@@ -83,7 +83,6 @@ export default function App() {
 
   const onSelectionChanged = useCallback(
     (e) => {
-      console.log("selectionChanged", e.addedItems[0])
       const newItem = e.addedItems[0]
       galleryImages.forEach((item, index) => {
         if (item === newItem) {
