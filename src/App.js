@@ -230,5 +230,6 @@ const column1Style = {
   width: "400px",
   marginLeft: "auto",
   marginRight: "auto",
+  paddingRight: "25px",
 }
 const column2Style = { gridColumn: 2, width: "700px" }
