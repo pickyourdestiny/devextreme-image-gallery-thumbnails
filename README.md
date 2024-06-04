@@ -12,7 +12,7 @@ I separated the Options.js page from the main App.js page for two reasons, the f
 
 The vertical thumbnail positions have the added bonus of allowing users to scroll up and down through the thumbnail list (using your mouse wheel) instead of having to rely on the tabs navigation buttons alone.
 
-To try the online demo click on the following link: https://665cd438ea270e2fbfc14828--zingy-praline-f128bf.netlify.app/
+To try the online demo click on the following link: https://devextreme-image-gallery-thumbnails.netlify.app/
 
 Note: you can use this code freely (as is) however the devextreme components do require a developer license if you plan on modifying the code and using it for commercial purposes: https://js.devexpress.com/Buy/ .
 
