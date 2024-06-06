@@ -120,6 +120,7 @@ export default function App() {
         }
         selectedIndex={selectedIndex}
         onSelectionChanged={onSelectionChanged}
+        scrollByContent={true}
         loop={true}
       />
     )
