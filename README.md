@@ -10,7 +10,7 @@ Alternatively, you can allow the user to switch between the four thumbnail posit
 
 I separated the Options.js page from the main App.js page for two reasons, the first was to avoid overwhelming those who are new to Devextreme or React in general and just show the two main components in use in the App.js file (Gallery + Tabs widgets). The second reason is to show you how easy it is to setup and configure the "optional" widgets used in the options menu, or not use them at all.
 
-The vertical thumbnail positions have the added bonus of allowing users to scroll up and down through the thumbnail list (using your mouse wheel) instead of having to rely on the tabs navigation buttons alone.
+All thumbnail positions have the added bonus of allowing users to scroll through the thumbnail list instead of having to rely on the tabs navigation buttons alone. In the horizontal position you can 'left mouse-click' and drag the thumbnails left or right. In the vertical position you can do the same, or just scroll up and down with your mouse-wheel. On mobile swipe gestures can be used as well.
 
 To try the online demo click on the following link: https://devextreme-image-gallery-thumbnails.netlify.app/
 
