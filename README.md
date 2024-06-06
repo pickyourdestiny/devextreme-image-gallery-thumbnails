@@ -1,7 +1,5 @@
 # Devextreme Image Gallery + Thumbnail Slider
 
-I ran into this solution because I was trying to reduce the number of external libraries on another project and only use Devextreme.
-
 This project was created using the Devextreme library which contains many other professional looking widgets. So in addition to an image gallery and thumbnail slider, you can look into using a variety of other devextreme widgets and customize them as needed. This project took less than a week from start to finish.
 
 The two main widgets configured are the Gallery widget for the main image gallery and the Tabs widget repurposed as a thumbnail slider. The Tabs widget was recently improved (https://js.devexpress.com/React/New/23_2/#Tabs-and-TabPanel) and now has an orientation option that allows you to align the tabs horizontally or vertically, which provides a more flexible thumbnail slider depending on your use case.
