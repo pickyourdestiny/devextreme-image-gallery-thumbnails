@@ -14,6 +14,6 @@ To try the online demo click on the following link: https://devextreme-image-gal
 
 Note: you can use this code freely (as is) however the devextreme components do require a developer license if you plan on modifying the code and using it for commercial purposes: https://js.devexpress.com/Buy/ .
 
-I am an independent contractor and this is my 'go to' library for all client engagements.
+I am an independent contractor and this is my 'go to' library for all client engagements.  Please leave a star if you clone this repository or find it useful.
 
 https://github.com/pickyourdestiny/devextreme-image-gallery-thumbnails/assets/125666742/6e291ffd-30ae-4fbb-9961-5c3a036d3c7d
